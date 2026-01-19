@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawMall - Магазин товаров для животных</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <img src="img/logo.svg" alt="PawMall - Магазин товаров для животных" class="logo-img">
+                    <span class="logo-text">PawMall</span>
+                </a>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link active">Главная</a>
+                <a href="catalog.html" class="nav-link">Каталог</a>
+                <a href="contacts.html" class="nav-link">Контакты</a>
+                <a href="profile.html" class="nav-link">Профиль</a>
+                <a href="basket.html" class="nav-link basket-link">
+                    Корзина <span class="basket-count">0</span>
+                </a>
+            </nav>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </header>
+
+    <!-- основание -->
+<main>
+    <!-- Герой-секция -->
+    <section class="hero">
+        <div class="hero-slider">
+            <div class="slide active" style="background-image: url('img/1.jpg')"></div>
+            <div class="slide" style="background-image: url('img/1.1.jpg')"></div>
+            <div class="slide" style="background-image: url('img/1.2.jpg')"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Всё для ваших любимых питомцев</h1>
+                <p>Качественные товары по доступным ценам с быстрой доставкой</p>
+                <div class="hero-buttons">
+                    <a href="catalog.html" class="btn btn-primary">Перейти в каталог</a>
+                    <a href="#features" class="btn btn-outline" style="color: white;">Узнать больше</a>
+                </div>
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button class="slider-prev" onclick="changeSlide(-1)">‹</button>
+            <div class="slider-dots">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+            <button class="slider-next" onclick="changeSlide(1)">›</button>
+        </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Почему выбирают нас?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon"></span>
+                    <h3>Бесплатная доставка</h3>
+                    <p>При заказе от 3000 ₽ доставляем бесплатно по всей России</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon"></span>
+                    <h3>Гарантия качества</h3>
+                    <p>Все товары проходят строгий контроль перед отправкой</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon"></span>
+                    <h3>Поддержка 24/7</h3>
+                    <p>Всегда на связи чтобы помочь с выбором и ответить на вопросы</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon"></span>
+                    <h3>Легкий возврат</h3>
+                    <p>Возврат товара в течение 14 дней без лишних вопросов</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Популярные товары -->
+    <section class="popular-products">
+        <div class="container">
+            <h2>Популярные товары</h2>
+            <div class="products-grid" id="popularProducts">
+                <!-- Товары будут добавлены через JavaScript -->
+            </div>
+            <div class="section-footer">
+                <a href="catalog.html" class="btn btn-outline">Смотреть все товары</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Категории -->
+    <section class="categories">
+        <div class="container">
+            <h2>Категории товаров</h2>
+            <div class="categories-grid">
+                <div class="category-card" onclick="location.href='catalog.html'">
+                    <span class="category-icon"></span>
+                    <h3>Для собак</h3>
+                    <p>Корм, игрушки, аксессуары</p>
+                </div>
+                <div class="category-card" onclick="location.href='catalog.html'">
+                    <span class="category-icon"></span>
+                    <h3>Для кошек</h3>
+                    <p>Наполнители, когтеточки, лежанки</p>
+                </div>
+                <div class="category-card" onclick="location.href='catalog.html'">
+                    <span class="category-icon"></span>
+                    <h3>Для грызунов</h3>
+                    <p>Клетки, корм, аксессуары</p>
+                </div>
+                <div class="category-card" onclick="location.href='catalog.html'">
+                    <span class="category-icon"></span>
+                    <h3>Для птиц</h3>
+                    <p>Корм, клетки, игрушки</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Акции -->
+    <section class="promo">
+        <div class="container">
+            <div class="promo-content">
+                <h2>Скидка 15% на первый заказ!</h2>
+                <p>Зарегистрируйтесь и получите скидку на первую покупку</p>
+                <a href="catalog.html" class="btn btn-primary">Воспользоваться акцией</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>Что говорят наши клиенты</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Отличный магазин! Быстрая доставка, качественные товары. Мой кот в восторге от новой когтеточки!"
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Марина Иванова</strong>
+                        <span>Владелец кота</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Заказываю корм для собаки регулярно. Цены приятные, ассортимент хороший. Рекомендую!"
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Алексей Петров</strong>
+                        <span>Владелец собаки</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Отличный сервис! Помогли с выбором корма для хомяка, всё привезли быстро."
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Ольга Сидорова</strong>
+                        <span>Владелец грызунов</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+    
+    <!-- подвал    -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Информация о компании -->
+                <div class="footer-section">
+                    <h4>PawMall</h4>
+                    <p>Магазин товаров для ваших любимых питомцев. Качество и забота в каждой покупке.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"> VK</a>
+                        <a href="#" class="social-link"> Instagram</a>
+                        <a href="#" class="social-link"> YouTube</a>
+                    </div>
+                </div>
+
+                <!-- Полезные ссылки -->
+                <div class="footer-section">
+                    <h4>Покупателям</h4>
+                    <ul class="footer-links">
+                        <li><a href="catalog.html">Каталог товаров</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+
+                <!-- Категории -->
+                <div class="footer-section">
+                    <h4>Категории</h4>
+                    <ul class="footer-links">
+                        <li><a href="catalog.html">Для собак</a></li>
+                        <a href="catalog.html">Для кошек</a></li>
+                        <li><a href="catalog.html">Для грызунов</a></li>
+                        <li><a href="catalog.html">Для птиц</a></li>
+                        <li><a href="catalog.html">Все категории</a></li>
+                    </ul>
+                </div>
+
+                <!-- Контакты -->
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <div class="contact-info">
+                        <p> +7 (999) 123-45-67</p>
+                        <p> support@pawmall.ru</p>
+                        <p> Пн-Пт: 9:00-20:00</p>
+                        <p> Москва, ул. Пушкинская, 15</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Нижняя часть футера -->
+            <div class="footer-bottom">
+                <p>&copy; 2024 PawMall. Все права защищены.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Пользовательское соглашение</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Кнопка чата -->
+    <button class="chat-btn" onclick="toggleChat()">💬</button>
+
+    <!-- Модальное окно чата -->
+    <div id="chatModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Чат поддержки</h3>
+                <button onclick="toggleChat()" class="close-btn">×</button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    <p>Здравствуйте! Чем могу помочь?</p>
+                    <span>10:30</span>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="messageInput" placeholder="Введите сообщение...">
+                <button onclick="sendMessage()">Отправить</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно товара -->
+    <div id="productModal" class="modal">
+        <div class="modal-content product-modal">
+            <div class="modal-header">
+                <h3 id="modalProductName"></h3>
+                <button onclick="closeModal('productModal')" class="close-btn">×</button>
+            </div>
+            <div class="modal-body">
+                <img id="modalProductImage" src="" alt="">
+                <div class="product-info">
+                    <p class="product-price" id="modalProductPrice"></p>
+                    <p class="product-description" id="modalProductDescription"></p>
+                    <div id="modalSellerInfo"></div>
+                    <div class="product-actions"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно продавца -->
+    <div id="sellerModal" class="modal">
+        <div class="modal-content seller-modal">
+            <div class="modal-header">
+                <h3 id="modalSellerName"></h3>
+                <button onclick="closeModal('sellerModal')" class="close-btn">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="seller-profile">
+                    <div class="seller-info-card">
+                        <div class="seller-rating" id="modalSellerRating"></div>
+                        <p class="seller-description" id="modalSellerDescription"></p>
+                        <div class="seller-contacts">
+                            <p>📞 <span id="modalSellerContact"></span></p>
+                            <p>📧 <span id="modalSellerEmail"></span></p>
+                        </div>
+                    </div>
+                    
+                    <div class="seller-products">
+                        <h4>Товары продавца</h4>
+                        <div class="products-grid" id="sellerProductsGrid">
+                            <!-- Товары продавца будут здесь -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
